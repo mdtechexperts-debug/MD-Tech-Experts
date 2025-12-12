@@ -1,0 +1,163 @@
+/* SECTION WRAPPER */
+.whychoose-section {
+  width: 100%;
+  padding: 60px 0 80px;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  font-family: "Quantico", sans-serif;
+}
+
+/* BACKGROUND */
+.whychoose-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/servicesbg.png");
+  background-position: center;
+  background-size: cover;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+/* SECTION TITLE */
+.whychoose-title {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffffff, #00c0c8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* GRID */
+.whychoose-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  justify-items: center;
+}
+
+/* CARD */
+.whychoose-card {
+  width: 100%;
+  max-width: 320px;
+  min-height: 330px;
+  border-radius: 22px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0, 49, 80, 0),
+    rgba(100, 0, 120, 0)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 18px rgba(0, 255, 255, 0.15);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  padding: 30px 25px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow-wrap: break-word;
+}
+
+/* ICON */
+.whychoose-icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+/* CARD TITLE */
+.whychoose-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+/* DESCRIPTION */
+.whychoose-card-desc {
+  font-size: 16px;
+  font-weight: 400;
+  color: #d8d8d8;
+  line-height: 1.5;
+  text-align: left;
+  width: 100%;
+}
+
+/* ------------------- RESPONSIVE ------------------- */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .whychoose-title {
+    font-size: 2.4rem;
+    margin-bottom: 40px;
+  }
+
+  .whychoose-card {
+    padding: 25px 20px;
+  }
+
+  .whychoose-icon {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  .whychoose-title {
+    font-size: 2rem;
+    margin-bottom: 35px;
+  }
+
+  .whychoose-card {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .whychoose-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .whychoose-card-desc {
+    font-size: 14px;
+  }
+}
+
+/* Extra small */
+@media (max-width: 480px) {
+  .whychoose-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  .whychoose-card {
+    max-width: 95%;
+    padding: 15px;
+  }
+
+  .whychoose-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .whychoose-card-desc {
+    font-size: 13px;
+  }
+}

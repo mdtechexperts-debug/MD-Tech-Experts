@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap");
+
+/* Main section container */
+.contact-section {
+  position: relative;
+  width: 100%;
+  padding: 160px 20px;
+  overflow: hidden;
+  font-family: "Quantico", sans-serif;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* BACKGROUND LAYER 1 — servicesbg */
+.contact-bg-layer {
+  background-image: url("../assets/servicesbg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: .3;
+}
+
+/* BACKGROUND LAYER 2 — contactbg (pattern shown in reference) */
+.contact-overlay {
+  background-image: url("../assets/contactbg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 1;
+}
+
+/* Content wrapper */
+.contact-inner {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+  color: #fff;
+}
+
+/* Logo */
+.contact-logo {
+  width: 180px;
+  margin-bottom: 30px;
+}
+
+/* Heading */
+.contact-heading {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  line-height: 1.35;
+}
+
+/* Subheading */
+.contact-description {
+  font-size: 20px;
+  line-height: 1.7;
+  max-width: 760px;
+  margin: auto;
+  opacity: 0.95;
+  margin-bottom: 45px;
+}
+
+/* Button Gradient */
+.contact-button {
+  background: linear-gradient(90deg, #003479, #00c0c8);
+  padding: 16px 50px;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s ease;
+  font-family: "Quantico", sans-serif;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+.contact-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.45);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .contact-heading {
+    font-size: 32px;
+  }
+  .contact-description {
+    font-size: 18px;
+  }
+  .contact-button {
+    font-size: 18px;
+    padding: 14px 40px;
+  }
+}

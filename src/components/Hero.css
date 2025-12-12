@@ -1,0 +1,176 @@
+/* Importing the Quantico and Inter fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+.hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 112px; /* Desktop padding remains the same */
+  color: white;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Quantico', sans-serif;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 800px;
+  text-align: left;
+  padding: 20px;
+}
+
+.hero-title {
+  font-size: 4rem; /* Keep desktop size */
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  opacity: 0.8;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.hero-btn {
+  width: 210px;
+  height: 60px;
+  background: linear-gradient(90deg, #003479 0%, #00C0C8 100%);
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-transform: capitalize;
+}
+
+.hero-btn:hover {
+  background-color: #0096b0;
+  transform: scale(1.05);
+}
+
+.hero-btn:focus {
+  outline: 3px solid #00C0C8;
+}
+
+.hero-btn-secondary {
+  width: 270px;
+  height: 60px;
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #00C0C8;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  backdrop-filter: blur(10px);
+  white-space: nowrap;
+  padding: 0 20px;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.hero-btn-secondary:hover {
+  background-color: rgba(0, 192, 200, 0.1);
+  transform: scale(1.05);
+}
+
+.hero-btn-secondary:focus {
+  outline: 3px solid #00C0C8;
+}
+
+/* Tablet / smaller screens */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 80px 15px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+
+  /* Keep desktop button sizes for tablet/desktop */
+  .hero-btn, .hero-btn-secondary {
+    width: auto; /* Use original width */
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 100px 15px 60px 15px; /* Add top padding so heading doesn't touch header */
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .hero {
+    padding: 100px 10px 40px 10px; /* Extra top padding */
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    gap: 10px;
+  }
+
+  .hero-btn, .hero-btn-secondary {
+    font-size: 14px;
+    padding: 0.6em 1em;
+  }
+}

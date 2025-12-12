@@ -1,0 +1,128 @@
+/* ---- BACKGROUND SECTION ---- */
+.services-section {
+  width: 100%;
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background image (full section – original size – 70% opacity) */
+.services-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/servicesbg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+.services-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---- GRADIENT HEADING ---- */
+.services-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  font-family: "Quantico", sans-serif;
+
+  /* Gradient left -> right */
+  background: linear-gradient(90deg, #ffffff, #00c0c8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-align: center;
+}
+
+/* ---- GRID ---- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 282px);
+  gap: 32px;
+  justify-content: center;
+}
+
+/* ---- GLASS-EFFECT CARD ---- */
+.service-card {
+  width: 282px;
+  height: 464px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  box-shadow: 0 0 18px rgba(0, 255, 255, 0.12);
+}
+
+/* Image */
+.service-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Title */
+.service-title {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  color: #d8d8d8;
+  margin: 16px 16px 10px 16px;
+  font-family: "Quantico", sans-serif;
+}
+
+/* Description */
+.service-description {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Quantico", sans-serif;
+  color: #d8d8d8;
+  padding: 0 16px;
+  line-height: 1.4;
+  text-align: left;
+
+  flex-grow: 1; /* pushes button down */
+  margin-bottom: 24px;
+}
+
+/* Button perfectly centered at bottom */
+.service-btn {
+  margin-top: auto;
+  margin-bottom: 16px;
+  display: block;
+  width: 150px;
+  padding: 10px 0;
+  align-self: center;
+
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-family: "Quantico", sans-serif;
+  font-weight: 600;
+  background: linear-gradient(90deg, #003479, #00c0c8);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.service-btn:hover {
+  opacity: 0.85;
+}
+/* Large screens – 4 cards per row */
+@media (min-width: 1600px) {
+  .services-grid {
+    grid-template-columns: repeat(4, 282px);
+    justify-content: center; /* keep cards centered */
+  }
+}

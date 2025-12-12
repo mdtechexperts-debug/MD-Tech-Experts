@@ -1,0 +1,120 @@
+.areas-container {
+  width: 100%;
+  text-align: center;
+  padding: 40px 20px;
+  background: #000;
+  color: #fff;
+  font-family: 'Quantico', sans-serif;
+}
+
+/* Title */
+.areas-title {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffffff, #00c0c8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.areas-title span {
+  color: #00c0e2; /* cyan highlighted text */
+}
+
+/* Description text */
+.areas-text {
+  font-size: 18px;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Map wrapper */
+.map-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Map image */
+.map-image {
+  width: 80%;
+  max-width: 1200px;
+  object-fit: contain;
+}
+
+/* ------------------- RESPONSIVE ------------------- */
+
+/* Large tablets / small desktops */
+@media (max-width: 1200px) {
+  .areas-title {
+    font-size: 2.4rem;
+  }
+
+  .areas-text {
+    font-size: 16px;
+    max-width: 750px;
+    margin-bottom: 35px;
+  }
+
+  .map-image {
+    width: 85%;
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .areas-title {
+    font-size: 2.2rem;
+  }
+
+  .areas-text {
+    font-size: 15px;
+    max-width: 650px;
+    margin-bottom: 30px;
+  }
+
+  .map-image {
+    width: 90%;
+  }
+}
+
+/* Small devices / phones */
+@media (max-width: 768px) {
+  .areas-title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+
+  .areas-text {
+    font-size: 14px;
+    max-width: 550px;
+    margin-bottom: 25px;
+  }
+
+  .map-image {
+    width: 95%;
+  }
+}
+
+/* Extra small devices / portrait phones */
+@media (max-width: 480px) {
+  .areas-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .areas-text {
+    font-size: 13px;
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .map-image {
+    width: 100%;
+  }
+}

@@ -1,0 +1,271 @@
+.about-section {
+  width: 100%;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Quantico", sans-serif;
+  color: #ffffff;
+}
+
+/* Heading */
+.about-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  background: linear-gradient(90deg, #ffffff, #00c0c8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+/* Container for text + image */
+.about-content {
+  width: 90%;
+  max-width: 1400px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between; /* desktop: space between text and image */
+  gap: 50px;
+  margin: 0 auto;
+}
+
+/* LEFT TEXT */
+.about-text {
+  width: 50%;
+  text-align: left;
+}
+
+.about-subtitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.about-desc {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #d8d8d8;
+  text-align: left;
+}
+
+/* RIGHT IMAGE */
+.about-image-wrapper {
+  width: 50%;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end; /* desktop: image right-aligned */
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+/* ------------------- RESPONSIVE ------------------- */
+
+/* Large tablets / small desktops */
+@media (max-width: 1200px) {
+  .about-desc {
+    font-size: 17px;
+  }
+
+  .about-subtitle {
+    font-size: 22px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;  /* stack text above image */
+    align-items: center;     /* center the entire content */
+    justify-content: center;
+  }
+
+  .about-text {
+    width: 100%;
+    max-width: 600px;        /* prevent too wide text */
+  }
+
+  .about-image-wrapper {
+    width: 100%;
+    justify-content: center; /* center image */
+    align-items: center;
+  }
+
+  .about-image {
+    width: 90%;              /* image takes 90% of container */
+    height: auto;
+    margin: 20px 0;          /* spacing between text and image */
+  }
+
+  .about-desc {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .about-subtitle {
+    font-size: 20px;
+    text-align: left;
+  }
+}
+
+/* Small devices / phones */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2.2rem;
+    margin-bottom: 35px;
+  }
+
+  .about-text {
+    max-width: 100%;          /* full width for text */
+  }
+
+  .about-desc {
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .about-subtitle {
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  .about-image {
+    width: 95%;
+    height: auto;
+    margin: 15px auto;       /* horizontally centered */
+  }
+}
+
+/* Extra small devices / portrait phones */
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .about-subtitle {
+    font-size: 16px;
+    margin-top: 15px;
+    text-align: left;
+  }
+
+  .about-desc {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .about-image {
+    width: 95%;
+    height: auto;
+    margin: 15px auto;       /* horizontally centered */
+  }
+
+  .about-content {
+    gap: 25px;
+    align-items: center;     /* center content */
+  }
+}
+/* safety: box sizing */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+/* stop page horizontal overflow while we find the cause */
+html, body { overflow-x: hidden; }
+
+/* ensure the about container can't overflow the viewport */
+.about-section {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* ensure content fits and children can't push it wider */
+.about-content {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 50px;
+  align-items: stretch;
+  justify-content: space-between;
+  overflow: visible; /* keep children visible but constrained by their max-widths below */
+}
+
+/* text column safety */
+.about-text {
+  width: 50%;
+  max-width: 100%;
+  overflow-wrap: break-word;   /* long words won't push the width */
+  word-break: break-word;
+}
+
+/* image wrapper & image safety */
+.about-image-wrapper {
+  width: 50%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;  /* desktop default; overridden on small screens below */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.about-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;          /* IMPORTANT: remove height:100% which can force overflow */
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+/* -------- specific fixes at/under 992 and 768 px ---------- */
+
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .about-text {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .about-image-wrapper {
+    width: 100%;
+    justify-content: center;  /* center image on tablet */
+  }
+
+  .about-image {
+    width: 90%;
+    max-width: 700px;
+    height: auto;
+    margin: 20px 0;
+  }
+}
+
+/* extra guard for <=768 where you said it breaks */
+@media (max-width: 768px) {
+  .about-content { padding-left: 12px; padding-right: 12px; gap: 20px; }
+  .about-text { width: 100%; max-width: 100%; padding-right: 0; }
+  .about-image-wrapper { width: 100%; justify-content: center; }
+  .about-image { width: 95%; max-width: 600px; border-radius: 18px; }
+}
