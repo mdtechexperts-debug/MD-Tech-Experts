@@ -12,7 +12,7 @@ const FAQ = () => {
     {
       question: "How can I contact MD Tech Team?",
       answer:
-        "You can reach us through the contact form on our website or by emailing us at hello@mdtechexperts.com. We typically respond within 24 hours.",
+        "You can reach us through the contact form on our website or by emailing us at info@mdtechexperts.com. We typically respond within 24 hours.",
     },
     {
       question: "What services do you offer?",

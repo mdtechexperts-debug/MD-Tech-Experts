@@ -12,7 +12,7 @@ export default function Header() {
 
         {/* Logo */}
         <div className="logo-section">
-          <a href="#home">
+          <a href="https://www.mdtechexperts.com/">
           <img src={Logo} alt="Logo" className="logo-img" /></a>
         </div>
 
@@ -25,7 +25,7 @@ export default function Header() {
         </nav>
 
         {/* Desktop Quote Button */}
-        <button className="quote-btn desktop-btn"><a href="#services">Get a Quote</a></button>
+        <button a href="#services" className="quote-btn desktop-btn">Get a Quote</button>
 
         {/* Hamburger (Mobile) */}
         <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
