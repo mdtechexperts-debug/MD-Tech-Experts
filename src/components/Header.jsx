@@ -6,6 +6,23 @@ import Logo from "../assets/Logo.svg";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const handleQuoteClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // Try default mail client first
+    window.location.href =
+      "mailto:info@mdtechexperts.com?subject=Service%20Consultation";
+
+    // Fallback to Gmail web (guaranteed)
+    setTimeout(() => {
+      window.open(
+        "https://mail.google.com/mail/?view=cm&fs=1&to=info@mdtechexperts.com&su=Service%20Consultation",
+        "_blank"
+      );
+    }, 500);
+  };
+
   return (
     <header className="header">
       <div className="header-container">
@@ -13,7 +30,8 @@ export default function Header() {
         {/* Logo */}
         <div className="logo-section">
           <a href="https://www.mdtechexperts.com/">
-          <img src={Logo} alt="Logo" className="logo-img" /></a>
+            <img src={Logo} alt="Logo" className="logo-img" />
+          </a>
         </div>
 
         {/* Desktop Navigation */}
@@ -25,10 +43,18 @@ export default function Header() {
         </nav>
 
         {/* Desktop Quote Button */}
-        <button a href="#contactus" className="quote-btn desktop-btn">Get a Quote</button>
+        <button
+          className="quote-btn desktop-btn"
+          onClick={handleQuoteClick}
+        >
+          Get a Quote
+        </button>
 
         {/* Hamburger (Mobile) */}
-        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        <div
+          className="hamburger"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           <span className={menuOpen ? "bar active bar1" : "bar bar1"}></span>
           <span className={menuOpen ? "bar active bar2" : "bar bar2"}></span>
           <span className={menuOpen ? "bar active bar3" : "bar bar3"}></span>
@@ -42,7 +68,15 @@ export default function Header() {
           <a href="#contactus">Contact</a>
 
           {/* Mobile Quote Button */}
-          <a href="#services"><button className="quote-btn mobile-btn">Get a Quote</button></a>
+          <button
+            className="quote-btn mobile-btn"
+            onClick={(e) => {
+              handleQuoteClick(e);
+              setMenuOpen(false); // close menu after click
+            }}
+          >
+            Get a Quote
+          </button>
         </nav>
 
       </div>

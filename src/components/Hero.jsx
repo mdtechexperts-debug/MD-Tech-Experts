@@ -3,6 +3,22 @@ import './Hero.css';
 import HeroImage from '../assets/Heroimage.png'; // Adjust path if necessary
 
 const Hero = () => {
+  const handleFreeConsultationClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // Try default mail client
+    window.location.href = "mailto:info@mdtechexperts.com?subject=Free%20Consultation";
+
+    // Fallback to Gmail web
+    setTimeout(() => {
+      window.open(
+        "https://mail.google.com/mail/?view=cm&fs=1&to=info@mdtechexperts.com&su=Free%20Consultation",
+        "_blank"
+      );
+    }, 500);
+  };
+
   return (
     <section className="hero" id="home" style={{ backgroundImage: `url(${HeroImage})` }}>
       <div className="hero-content">
@@ -14,7 +30,9 @@ const Hero = () => {
         </p>
         <div className="hero-buttons">
           <a href="#services"><button className="hero-btn">View Our Services</button></a>
-          <a href="https://wa.me/+923468190496"><button className="hero-btn-secondary">Request a Free Consultation</button></a>
+          <button className="hero-btn-secondary" onClick={handleFreeConsultationClick}>
+            Request a Free Consultation
+          </button>
         </div>
       </div>
     </section>

@@ -103,9 +103,24 @@ const popupContent = {
 export default function Popup({ service, onClose }) {
   const content = popupContent[service.title];
 
+  const handleEmailClick = (e) => {
+    e.stopPropagation();
+
+    // Try default mail client
+    window.location.href = "mailto:info@mdtechexperts.com";
+
+    // Fallback to Gmail web (guaranteed to open)
+    setTimeout(() => {
+      window.open(
+        "https://mail.google.com/mail/?view=cm&fs=1&to=info@mdtechexperts.com",
+        "_blank"
+      );
+    }, 500);
+  };
+
   return (
     <div className="popup-overlay">
-      <div className="popup-card">
+      <div className="popup-card" onClick={(e) => e.stopPropagation()}>
         {/* RIGHT CONTENT */}
         <div className="popup-right">
           <h2 className="popup-title">{content.title}</h2>
@@ -116,12 +131,19 @@ export default function Popup({ service, onClose }) {
               <li key={idx}>{item}</li>
             ))}
           </ul>
-          <a href="mailto:info@mdtechexperts.com"><button className="popup-btn">{content.buttonText}</button></a>
+
+          <button className="popup-btn" onClick={handleEmailClick}>
+            {content.buttonText}
+          </button>
         </div>
 
         {/* LEFT IMAGE */}
         <div className="popup-left">
-          <img src={service.popupImage} alt={content.title} className="popup-image" />
+          <img
+            src={service.popupImage}
+            alt={content.title}
+            className="popup-image"
+          />
         </div>
 
         {/* CLOSE BUTTON */}

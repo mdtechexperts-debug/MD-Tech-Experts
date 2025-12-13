@@ -1,11 +1,29 @@
 // src/components/ContactSection.jsx
 import React from "react";
 import servicesbg from "../assets/servicesbg.png";
-import contactbg from "../assets/contactbg.png"; 
+import contactbg from "../assets/contactbg.png";
 import Logo from "../assets/Logo.svg";
 import "./ContactSection.css";
 
 const ContactSection = () => {
+
+  const handleStartProjectClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // Try default mail client
+    window.location.href =
+      "mailto:info@mdtechexperts.com?subject=Start%20a%20Project";
+
+    // Fallback to Gmail web (guaranteed)
+    setTimeout(() => {
+      window.open(
+        "https://mail.google.com/mail/?view=cm&fs=1&to=info@mdtechexperts.com&su=Start%20a%20Project",
+        "_blank"
+      );
+    }, 500);
+  };
+
   return (
     <section className="contact-section" id="contactus">
       <div className="contact-bg-layer" />
@@ -27,8 +45,13 @@ const ContactSection = () => {
           touch with us.
         </p>
 
-        {/* Button */}
-        <a href="mailto:info@mdtechexperts.com"><button className="contact-button">Start Project</button></a>
+        {/* Start Project Button */}
+        <button
+          className="contact-button"
+          onClick={handleStartProjectClick}
+        >
+          Start Project
+        </button>
       </div>
     </section>
   );
