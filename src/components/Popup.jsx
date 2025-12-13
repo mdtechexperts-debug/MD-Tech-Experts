@@ -116,7 +116,7 @@ export default function Popup({ service, onClose }) {
               <li key={idx}>{item}</li>
             ))}
           </ul>
-          <a href="https://wa.me/+923468190496"><button className="popup-btn">{content.buttonText}</button></a>
+          <a href="mailto:info@mdtechexperts.com"><button className="popup-btn">{content.buttonText}</button></a>
         </div>
 
         {/* LEFT IMAGE */}

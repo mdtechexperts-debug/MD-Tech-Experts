@@ -25,7 +25,7 @@ export default function Header() {
         </nav>
 
         {/* Desktop Quote Button */}
-        <button a href="#services" className="quote-btn desktop-btn">Get a Quote</button>
+        <button a href="#contactus" className="quote-btn desktop-btn">Get a Quote</button>
 
         {/* Hamburger (Mobile) */}
         <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>

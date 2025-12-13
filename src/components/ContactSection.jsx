@@ -28,7 +28,7 @@ const ContactSection = () => {
         </p>
 
         {/* Button */}
-        <a href="https://wa.me/+923468190496"><button className="contact-button">Start Project</button></a>
+        <a href="mailto:info@mdtechexperts.com"><button className="contact-button">Start Project</button></a>
       </div>
     </section>
   );
