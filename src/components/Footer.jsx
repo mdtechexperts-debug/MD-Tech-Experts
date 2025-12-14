@@ -65,8 +65,8 @@ const Footer = () => {
             </a>
           </span>
           <span>
-            <a href="https://wa.me/+923468190496">
-              <img src={IconPhone} alt="phone" /> +92 346 8190496
+            <a href="https://wa.me/+923463940557">
+              <img src={IconPhone} alt="phone" /> +92 346 3940557
             </a>
           </span>
         </div>

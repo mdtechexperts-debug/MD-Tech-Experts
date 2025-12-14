@@ -56,7 +56,7 @@ const CounterSection = () => {
         <div className="divider"></div>
 
         <div className="counter-box">
-          <h2><Counter end={15} suffix="+" /></h2>
+          <h2><Counter end={6} suffix="+" /></h2>
           <p>Successful Years</p>
         </div>
 
